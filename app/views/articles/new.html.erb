@@ -1,0 +1,26 @@
+
+<% if @article.errors.any?  %>
+	<ul>
+		<% if @article.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+		<% end %>	
+	</ul>
+<% end %>
+
+<h1>Create the article</h1>
+
+
+<%= form_for @article do |f| %>
+<p>
+	<%= f.label :title  %><br>
+	<%= f.text_field :title %>
+</p>	
+<p>
+	<%= f.label :description %><br>
+	<%= f.text_area :description %>
+</p>
+<hr>
+<%= f.submit %>
+
+<% end %>
