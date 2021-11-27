@@ -9,20 +9,38 @@
 	</ul>
 <% end %>
 
-
-
-<%= form_for @article do |f| %>
-<p>
-	<%= f.label :title  %><br>
-	<%= f.text_field :title %>
-</p>	
-<p>
-	<%= f.label :description %><br>
-	<%= f.text_area :description %>
-</p>
-<hr>
-<%= f.submit %>
-
+<div class="row">
+	<div class = '  col-xs-12'>
+		<%= form_for(@article, :html => {class: 'form-horizontal',role: 'form'}) do |f| %>
+		<div class = 'form-group row'>
+			<div class=" form-control-label col-sm-2">
+				<%= f.label :title ,class: "form-control" %> 
+			</div>
+			<div class="col-sm-6">
+				<%= f.text_field :title ,class:"form-control",placeholder:"Title of the Article",autofocus: true%>
+			</div>
+		</div>
+		<br>
+		<div  class = 'form-group row'>
+		<div class=" form-control-label col-sm-2">
+				<%= f.label :description,class:"form-control"%> 
+		</div>
+		<div class =" col-sm-8">
+				<%= f.text_area :description, rows: 12 ,class:"form-control",placeholder:"Description of the Article" %>
+		</div>
+	</div>
+	<br>
+		<div class="form-control-label">
+		<div class="offset-3 col-sm-6">
+			<%= f.submit class:"btn btn-outline-success  submit_search"%>
+		</div>
+	</div>
 <% end %>
+	
+	</div>
 
-<%= link_to "Back to all articles" , articles_path %>
+
+</div>
+<hr>
+
+	<%= link_to "Back to all articles" , articles_path ,  class: 'btn-outline-success btn btn-inverse submit_search' %>
