@@ -11,5 +11,5 @@ environment.plugins.append("Provide", new webpack.ProvidePlugin({
     Popper: ['popper.js', 'default']  // Not a typo, we're still using popper.js here
 }))
 // End new addition
-if (process.env.RAILS_ENV != 'production') environment.splitChunks()
+
 module.exports = environment
