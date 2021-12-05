@@ -1,22 +1,21 @@
 
 
-<h1>ALL ARTICLES</h1>
-<%= link_to "Create a new article" , new_article_path %>
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Description</th>
-	</tr>
-	<% @articles.each do |article| %>
-	<tr>
-		<td><%= article.title %></td>
-		<td><%= article.description %></td>
-		<td><%= link_to "edit" , edit_article_path(article) %></td>
-		<td><%= link_to "show" , article_path(article) %></td>
-		<td><%= link_to "delete" , article_path(article) , method: :delete,data: {confirm: "Are You Sure?"} %></td> 
+<h1 align="center">ALL ARTICLES</h1>
+
+<% @articles.each do |article| %>
+<div class="row justify-content-center  "  style="text-align: center; min-height: 600px; margin-top: 20px;">
+	<div class="col-xl-6 " >
+		<div class="card card-lg bg-warning d-inline-flex">
+			<div class="card-title article-title "> <%= link_to article.title,article_path(article),class: "card-title" %> </div>
+			<div class="card-body article-body"> <%= truncate(article.description ,length: 100) %> </div>
+			<div class="article-actions">
+				<%= link_to "edit" , edit_article_path(article),class:"btn  btn-primary" %>
+				<%= link_to "show" , article_path(article),class:"btn  btn-success" %>
+				<%= link_to "delete" , article_path(article) , method: :delete,data: {confirm: "AreYou Sure?"},class:"btn  btn-danger" %>
+			</div>
+		</div>	
+	</div>
+</div>
+<% end %>
 
 
-	</tr>
-
-	<% end %>
-</table>

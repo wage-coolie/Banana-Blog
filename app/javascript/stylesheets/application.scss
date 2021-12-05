@@ -2,7 +2,6 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    min-height: 100vh;
     background: linear-gradient(90deg, rgba(157,162,57,1) 38%, rgba(78,61,42,1) 91%);
 }
 
@@ -68,17 +67,19 @@ body {
 .btn-outline-warning{
 	background-color: #433803FF;
 }
-
+/*
 footer {
 text-align: left;
 background-color: #f4f4f4;
-z-index: 1;
 top:  100%;
 bottom: 0;
 width:100%;
-position: sticky;
-}
+position: absolute;
+}*/
 
+.content-footer {
+    flex: 0 0 auto;
+}
 
 footer a:hover{
 	color: #A5A500FF;
@@ -87,4 +88,46 @@ footer a:hover{
 .submit_search{
 	background-color: rgb(56, 74, 13,0.3);
 	color: yellow;
+}
+.article-actions{
+ border-top: 1px solid ;
+ padding-top: 10px;
+}
+.description{
+	margin-top: -10px;
+}
+
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 142px; 
+}
+.content-footer {
+  background: orange;
+  bottom: 0;
+}
+
+.article-title{
+	font-weight: bold;
+	font-size: 1.5e;
+	font-family: monospace;
+}
+
+.article-body{
+	padding-top: 5px;
+	border-top: 1px solid #745F34FF;
+}
+.article-actions{
+	padding-bottom: 10px;
+	margin-bottom: 20px;
 }

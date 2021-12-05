@@ -1,0 +1,20 @@
+<% if @article.errors.any?  %>
+<div class="row">
+	<div class="col-xs-8 col-xs-offset-2">
+		<div class="card card-danger bg-danger ">
+			<div class="card-heading">
+				<h2 class="card-title text-center">
+					<%= pluralize(@article.errors.count,"error") %>
+					to resolve
+				</h2>
+				<div class='card-body'>
+					<ul><% @article.errors.full_messages.each do |msg| %>
+					<li> <%= msg %> </li>
+					<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>

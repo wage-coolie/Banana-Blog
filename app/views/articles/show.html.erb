@@ -1,13 +1,18 @@
-<h1>
-	Showing Article <%= @article.id %>
-</h1>
-
-<p>	Title : 
-	<%= @article.title %>
-</p>
+<br>
+<h2 class="card  text-center" style="background-color: rgb(255, 255, 127,0.4);">
+	Title - <%= @article.title %>
+</h2>
 <hr>
-<p> ...............Description............ <br>
-	<%= @article.description %>
-</p>
-<%= link_to "Edit" , edit_article_path(@article) %>
-<%= link_to "Back to all articles" , articles_path %>
+<div class="d-flex justify-content-center">
+<div class=" card bg-warning mb-3 col-md-8 p-4">
+	<h4 class="center description "><strong>Description</strong></h4>
+	<br>
+	<%= simple_format(@article.description) %>
+	<br>
+	<div class="article-actions">
+		<%= link_to "Edit" , edit_article_path(@article),class:"btn  btn-primary" %>
+		<%= link_to "Back to all articles" , articles_path,class:"btn  btn-success" %>
+		<%= link_to "Delete" , article_path(@article) , method: :delete, data: { confirm: "YOU SURE YOU WANNA DELETE" } , class:"btn  btn-danger" %>
+	</div>
+</div>
+</div>
