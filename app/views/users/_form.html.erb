@@ -1,0 +1,45 @@
+
+<div class="row">
+	<div class = '  col-xs-12'>
+		<%= form_for(@user, :html => {class: 'form-horizontal',role: 'form'}) do |f| %>
+		<div class = 'form-group row'>
+			<div class=" form-control-label col-sm-2">
+				<%= f.label :username ,class: "form-control" %> 
+			</div>
+			<div class="col-sm-6">
+				<%= f.text_field :username ,class:"form-control",placeholder:"Enter Username",autofocus: true%>
+			</div>
+		</div>
+		<br>
+		<div  class = 'form-group row'>
+		<div class=" form-control-label col-sm-2 ">
+				<%= f.label :email,class:"form-control text-truncate"%> 
+		</div>
+		<div class =" col-sm-8">
+				<%= f.email_field :email, rows: 12 ,class:"form-control",placeholder:"Enter your email" %>
+		</div>
+		</div>
+	<br>
+		<div  class = 'form-group row'>
+		<div class=" form-control-label col-sm-2 ">
+				<%= f.label :password,class:"form-control text-truncate"%> 
+		</div>
+		<div class =" col-sm-8">
+				<%= f.password_field :password, rows: 12 ,class:"form-control",placeholder:"Enter Password" %>
+		</div>
+		</div>
+		<br>
+		<div class="form-control-label">
+		<div class="offset-3 col-sm-6">
+			<%= f.submit(@user.new_record? ? 'Sign up' : 'Update Account' , class:"btn btn-outline-success  submit_search") %>
+		</div>
+	</div>
+<% end %>
+	
+	</div>
+
+
+</div>
+<hr>
+
+	<%= link_to "Back to all articles" , articles_path ,  class: 'btn-outline-success btn btn-inverse submit_search' %>

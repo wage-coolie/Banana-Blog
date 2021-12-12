@@ -1,0 +1,31 @@
+<h2 align="center"> Log In</h2>
+<div class = 'flex '>
+<%= form_for(:session, :html => {class: 'form-horizontal',role: 'form'},url: login_path) do |f| %>
+	<div class="">
+		<br>
+		<div  class = 'form-group row justify-content-center'>
+		<div class=" form-control-label col-md-1 ">
+				<%= f.label :email,class:"form-control text-truncate"%> 
+		</div>
+		<div class =" col-sm-5">
+				<%= f.email_field :email, rows: 12 ,class:"form-control",placeholder:"Enter your email" %>
+		</div>
+		</div>
+	<br>
+		<div  class = 'form-group row justify-content-center'>
+		<div class=" form-control-label col-sm-1 ">
+				<%= f.label :password,class:"form-control text-truncate"%> 
+		</div>
+		<div class =" col-sm-5">
+				<%= f.password_field :password, rows: 12 ,class:"form-control",placeholder:"Enter Password" %>
+		</div>
+		</div>
+		<br>
+		<div class = 'd-flex justify-content-center '>
+			<%= f.submit 'Login' , class: "btn btn-outline-success  submit_search" %>
+		
+		</div>
+</div>
+<% end %>
+<hr>
+</div>

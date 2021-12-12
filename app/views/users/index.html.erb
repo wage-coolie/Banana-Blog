@@ -1,0 +1,31 @@
+<h2 align="center">ALL USERS WHO LOVE BANANAS</h2>
+
+	<% counter = 1 %>
+	<% total_rows =  (@users.all.count/3 + 1) %>
+	<% @users.find(1) %>
+	<% total_users = @users.all.count %>
+
+<div class="container">
+	<% for i in 1..total_rows %>
+			<div class='row'>
+				<% for j in 0..3 %>
+					<% if counter<=total_users %>
+						<% user = @users.find(counter) %>
+						<section class="card col-sm-3 user-card" style="min-width: 300px;max-width: 300px; background: rgb(208, 232, 90,0.7);">
+						<img class="card-img-top user-image " src="https://img-9gag-fun.9cache.com/photo/a6Vq4wm_700bwp.webp" style="height: 200px; width: 200px;">
+						<h5 class="card-title temp" > 
+						<%= link_to user.username, user_path(user),class: "user-card-title " %>
+						</h5>
+		 				<div class="card-body ">
+    					<%= user.email %>
+ 		 				</div>
+						</section>
+						<% counter = counter + 1 %>
+					<% end %>
+				<% end %>
+			</div>
+	<% end %>
+
+</div>
+
+

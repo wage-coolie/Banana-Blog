@@ -132,6 +132,74 @@ html, body {
 	border-top: 1px solid #745F34FF;
 }
 .article-actions{
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+
+
+}
+
+.index_show{
+	padding: 20px;
+}
+
+.article-meta-details{
+	border-top: 1px solid;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+
+}
+.login_box{
+	padding: 10px;
+	margin: 10px;
+}
+
+
+.container{
+	margin-top: 20px;
+	margin:  20px;
+}
+
+.user-card{
+	margin:  10px;
+}
+.temp{
+		text-transform: capitalize;
+		
+		text-align: center;
+		align-self: center;
+		margin-bottom: 0px;
+		margin-top: 6px;
+		border-radius: 0.5px;
+}
+.temp:hover{
+	background-color: rgb(217.26, 241.05, 45.82);
+	text-shadow: orange;
+	border-radius: 0.5px;
+	text-transform: capitalize;
+		border-bottom-right-radius: 20px;
+		border-bottom-left-radius: 20px;
+		border-style: double;
+}
+.temp:active{
+	background-color: rgb(127, 255, 0,0.6);
+}
+.temp:visited{
+	background-color: rgb(127, 255, 0,0.6);
+	color: rgb(255, 228, 17,0.5);
+}
+
+.user-image{
+ margin-top: 6px;
+ align-self: center;
+}
+.user-card-title{
+	text-decoration-color: yellow;
+	color: #387100FF;
+}
+.user-card-title:hover{
+	background-color: rgb(217.26, 241.05, 45.82);
+	text-shadow: orange;
+	border-radius: 0.5px;
+	text-transform: capitalize;
+		border-bottom-right-radius: 20px;
+		border-bottom-left-radius: 20px;
+		border-style: double;
 }
