@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-md navbar-light ">
     <div class="container-fluid">
         <a class="navbar-brand" id="logo" href="<%= root_path %>">Banana Blog</a>
       
@@ -7,31 +7,50 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<%= articles_path %>">Articles</a>
+                <li>
+                 <form class="navbar-nav d-flex">
+                <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style="max-width: 200px">
+                <button class="btn btn-outline-success submit_search" type="submit">Search</button>
+                </form>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                &nbsp;
+                <li class="nav-item ">
+                    <a class="nav-link active text-success bg-warning" aria-current="page" href="<%= articles_path %>" style="font-size: 20px;border-style: double;">Articles</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item ">
+                    <a class="nav-link active text-success bg-warning" aria-current="page" href="<%= users_path %>" style="font-size: 20px;border-style: double;">Users</a>
+                </li>
+            </ul>
+
+               
+
+            
+            
+            <% if logged_in? %>
+            <div class="text-warning dropdown">
+                    <a class="nav-link dropdown-toggle text-white bg-secondary" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 17px;border-style: groove;">
                         Actions
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="<%= new_article_path %>">Create New Article</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
-                            <hr class="dropdown-divider">
+                            <a class="dropdown-item" href="<%= edit_user_path(current_user) %>">Edit your Profile</a>                          
+                        <li>
+                            <li>
+                            <a class="dropdown-item" href="<%= user_path(current_user) %>">View your Profile</a>                          
+                        <li>
+                            <!-- <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                     </ul>
-                </li>
-
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success submit_search" type="submit">Search</button>
-            </form>
+                </div>
+                &nbsp;
+            <%= link_to "Log out", logout_path ,method: :delete ,class: 'btn btn-danger' ,style: "font-size: 17px; max-width:100px"%>
+            <% else %>
+            <%= link_to "Login", login_path ,class: 'btn btn-success text-white'  ,style: "font-size: 17px; max-width:100px"%>
+            |
+             <%= link_to "Sign Up", signup_path ,class: 'btn btn-primary text-white' ,style: "font-size: 17px; max-width:100px"%>
+             <% end %>
         </div>
     </div>
 </nav>

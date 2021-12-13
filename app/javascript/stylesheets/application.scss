@@ -203,3 +203,28 @@ html, body {
 		border-bottom-left-radius: 20px;
 		border-style: double;
 }
+.prev{
+	background-color: blue;
+	align-self: right;
+}
+.pagination{
+	align-self: right;
+	align-content: right;
+	text-align: rightright;
+	align-items: right;
+}
+.signup_btton{
+	color: black;
+	border-style: solid;
+	border-color: black;
+	border-width: 9px;
+
+}
+.signup_btton:hover{
+	color: black;
+	border-width: 15px;
+	border-style: solid;
+	font-weight: bold;
+	border-color: #6F451FFF;
+
+}

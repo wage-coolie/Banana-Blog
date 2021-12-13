@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
 	 length: {minimum: 5 , maximum: 30} , 
 	 format: {with: VALID_EMAIL_REGEX }
 	 has_secure_password
+	 paginates_per 5
 end

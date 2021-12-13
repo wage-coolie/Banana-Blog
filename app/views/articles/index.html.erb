@@ -1,7 +1,9 @@
 
 
 <h1 align="center">ALL ARTICLES</h1>
+
 <div style="min-height: 600px;">
+
 <% @articles.each do |article| %>
 <div class="row justify-content-center  "  style="text-align: center; margin-top: 20px;">
 	<div class="col-xl-6 " >
@@ -15,15 +17,19 @@
 					Updated at:<%= time_ago_in_words(article.updated_at) %> 
 				</small>
 			 </div>
+			 <% if logged_in? && current_user == article.user %>
 			<div class="article-actions">
-				<%= link_to "edit" , edit_article_path(article),class:"btn  btn-primary" %>
-				<%= link_to "show" , article_path(article),class:"btn  btn-success" %>
-				<%= link_to "delete" , article_path(article) , method: :delete,data: {confirm: "AreYou Sure?"},class:"btn  btn-danger" %>
+				<%= link_to "edit" , edit_article_path(article),class:"btn text-white btn-primary" %>
+				<%= link_to "show" , article_path(article),class:"btn text-white btn-success" %>
+				<%= link_to "delete" , article_path(article) , method: :delete,data: {confirm: "AreYou Sure?"},class:"btn text-white btn-danger" %>
 			</div>
+			<% end %>
 		</div>	
 	</div>
 </div>
 <% end %>
 </div>
+
+<%= paginate @articles %>
 
 
