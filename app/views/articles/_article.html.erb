@@ -12,7 +12,7 @@
 					Updated at:<%= time_ago_in_words(article.updated_at) %> 
 				</small>
 			 </div>
-			 <% if logged_in? && current_user == article.user %>
+			 <% if logged_in? &&( current_user == article.user || current_user.admin?) %>
 			<div class="article-actions">
 				<%= link_to "edit" , edit_article_path(article),class:"btn  btn-primary" %>
 				<%= link_to "show" , article_path(article),class:"btn  btn-success" %>

@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
+		
 		@article = Article.new(article_params)
 		@article.user = current_user
 		if @article.save
@@ -55,10 +56,11 @@ class ArticlesController < ApplicationController
 
 	end
 	def article_params
-		params.require(:article).permit(:title,:description)
+		params.require(:article).permit(:title,:description,category_ids:[])
+
 	end
 	def require_same_user
-		if current_user != @article.user
+		if current_user != @article.user and !current_user.admin?
 			flash[:danger] = "Delete your own article, you have no right to do this to a fellow banana lover"
 			redirect_to root_path
 		end

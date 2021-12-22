@@ -1,0 +1,7 @@
+<h1 align="center"><%= @category.name %></h1>
+
+<div align="center" style="min-height: 600px;">
+	<%= render 'articles/article' , obj: @category_articles %>
+</div>
+
+<%= paginate @category_articles %>

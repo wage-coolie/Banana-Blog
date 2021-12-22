@@ -26,6 +26,12 @@
 	</div>
 	<br>
 		<div class="form-control-label">
+			<div class="offset-3 col-sm-6">
+			<%= f.collection_check_boxes :category_ids,Category.all,:id,:name do |cb| %>
+			<%= cb.label(class: "checkbox-inline")  {cb.check_box(class:"checkbox form-check-input",style: "background-color: green") + cb.text.capitalize } %>
+
+			<% end %>
+		</div>
 		<div class="offset-3 col-sm-6">
 			<%= f.submit class:"btn btn-outline-success  submit_search"%>
 		</div>

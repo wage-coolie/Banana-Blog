@@ -10,7 +10,8 @@
 			<div class='row'>
 				<% for j in 0..3 %>
 					<% if counter<=total_users %>
-						<% user = @users.find(counter) %>
+						<% #user = @users.find(counter) %>
+					<% if @users.find_by_id(counter) then user = @users.find(counter) %>
 						<section class="card col-sm-3 user-card" style="min-width: 300px;max-width: 300px; background: rgb(208, 232, 90,0.7);">
 						<img class="card-img-top user-image " src="https://img-9gag-fun.9cache.com/photo/a6Vq4wm_700bwp.webp" style="height: 200px; width: 200px;">
 						<h5 class="card-title temp" > 
@@ -19,7 +20,12 @@
 		 				<div class="card-body ">
     					<%= user.email %>
  		 				</div>
+ 		 				<% if current_user.admin? and logged_in? %>
+ 		 				<p class="btn  btn-danger"><%= link_to "Delete this User" , user_path(user),method: :delete, data: {confirm: "You sure you want to delete the user and articles of their belonging?"},class: "text-white"%></p>
+ 		 				<% end %>
 						</section>
+						
+						<% end %>
 						<% counter = counter + 1 %>
 					<% end %>
 				<% end %>
